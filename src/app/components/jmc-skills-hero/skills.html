@@ -1,0 +1,19 @@
+<div id="{{skill.title}}" class="jmc-skill" ng-class="{active: active, direction: direction}">
+	<div class="jmc-skill-wrapper">
+		<div class="jmc-skill-main md-whiteframe-2dp" ng-class="direction">
+			<h2>{{skill.title}}</h2>
+			<p ng-transclude>
+				
+			</p>
+			<a ng-href="{{skill.url}}" class="jmc-button">Visit Website</a>
+		</div>
+		<!-- the flex order attr pulls the image left if $scope.direction === 'left' -->
+		<div class="jmc-skill-img md-whiteframe-2dp" ng-class="direction">
+			<img ng-src="{{skill.imageUrl}}">
+		</div>
+	</div> <!--jmc-skill-wrapper end -->
+<!-- 
+EXAMPLE directive:
+<jmc-skill-hero skill="{title:'AngularJS', imageUrl:'assets/images/angular.png', color: '#999fff'}"></jmc-skill-hero> 
+--> 
+</div>

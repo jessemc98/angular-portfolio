@@ -1,0 +1,53 @@
+.jmc-portrait {
+		position: relative;
+		height: 240px;
+		width: 240px;
+		border: 6px solid #197db0;
+
+	&-img {
+		position: absolute;
+		bottom: 0;
+		right: 50%;
+		transform: translate(50%);
+	}
+
+	&-msg {
+		z-index: 2;
+		width: 6/8 * 100%;
+		position: absolute;
+		right: 0;
+		bottom: 20%;
+		background: #197db0;
+		padding: 5px 5px;
+		h3 {
+			padding-left: 10px;
+		}
+	}
+
+	h3 {
+		margin: 0;
+		text-decoration: underline;
+		color: white;
+	}
+
+	&-overlay {
+		width: 100%;
+		height: 100%;
+		background: #197db0; 
+		opacity: 0.25 ;
+	}
+}
+
+jmc-portrait .jmc-follow > div{
+	display: inline-block;
+	a.jmc-follow-button {
+		background-color: #519cd6;
+		&:not([disabled]):hover {
+			background: #135d83;
+		}
+	}
+
+	&:first-child, &:last-child {
+		transform: translate(0, -20px);
+	}
+}

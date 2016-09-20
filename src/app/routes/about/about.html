@@ -1,0 +1,90 @@
+<div class="about-view">
+	<div class="about-view-info">
+		<!-- Portrait -->
+		<div layout="row" class="about-portrait">
+		  <span flex></span>
+		  <jmc-portrait msg="'Jesse McIntosh'"></jmc-portrait>
+		  <span flex></span>
+		</div>
+		
+		<div class="about-my-info">
+			<h1>Hi,</h1>
+			<p>
+				I’m a highly motivated, self taught front end developer with 2 years of experience writing web applications.  An effective team member with excellent technical and communicative skills.
+			</p>
+			<p>
+				I enjoy learning new technologies and workflow tools to make development more efficient, scroll down to see some of the popular technologies i use or click the button below to keep reading.
+			</p>
+			<div class="extra" ng-class="{active: vm.extraInfo}">
+				<p>
+					I strongly believe that writing clear, understandable code that’s easy to read at a glance  is just as important as writing functional code.  As developers we spend the majority of our time reading and understanding other peoples code rather than writing our own, therefore, by focusing on making the code we write easily readable we can develop code in a team much more efficiently.
+				</p>
+				<p>
+					My favourite part about web development is writing the complex logic which gives most people a headache as well as refactoring code to make it more performant/maintainable.
+				</p>
+				<p>
+					In my free time I enjoy learning about software architecture and web performance as well as developing silly personal projects to develop my knowledge on new technologies.
+				</p>
+			</div>
+
+			<!-- view more info about me button -->
+			<div class="about-view-more">
+				<md-button class="md-fab md-mini" ng-click="vm.toggleExtraInfo()">
+					<md-icon class="material-icons">{{!vm.extraInfo ? 'add':'remove'}}</md-icon>
+				</md-button>
+				<!-- shows more if vm.extraInfo === true, else shows less -->
+				View {{!vm.extraInfo ? 'more':'less'}} info about me...
+			</div>
+		</div>
+	</div>
+
+	<jmc-header title="'Key Skills'"></jmc-header>
+	<section class='about-skills'>
+		<jmc-skill-hero skill="{title:'AngularJS', imageUrl:'assets/images/angular.png', color: '#79d2ff', id: 1, url:'https://angularjs.org/'}">
+			AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you would otherwise have to write.AngularJS was created, as a side project, in 2009 by two developers, Misko Hevery and Adam Abrons.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Gulp', imageUrl:'assets/images/gulp.png', color: '#1673a3', id: 2, url:'http://gulpjs.com/'}" direction="'left'">
+			Gulp is a task/build runner for development. It allows you to do a lot of stuff within your development workflow. You can compile sass files, uglify and compress js files and much more. Gulp is just one among many task runners, other popular examples are Grunt and NPM.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Sass', imageUrl:'assets/images/sass.svg', color: '#0f4e6e', id: 3, url: 'http://www.sass-lang.com'}">
+			Sass is a popular CSS preprocessor, it extends CSS by allowing developers to write code in one language and then compile it into CSS. Some examples of CSS preprocessor include: Sass, LESS and Stylus.
+			Sass (Syntactically Awesome StyleSheets) is an extension of CSS. Sass allows you to use things like variables, nested rules, inline imports and more. It also helps to keep things organized and allows you to create stylesheets faster.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Jasmine', imageUrl:'assets/images/jasmine.png', color: '#3fbefe', id: 4, url:'http://jasmine.github.io/'}" direction="'left'">
+			Jasmine is a popular open source testing framework for JavaScript. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Git/Github', imageUrl:'assets/icons/github.svg', color: '#79d2ff', id: 5, url:'https://github.com/jessemc98'}">
+			Git is a version control system that is used for software development and other version control tasks. Github offers online project hosting using Git free of charge for open source projects. 
+			There are many benefits of using a version control system for your projects, it is essential for collaboration and allows you to restore and log previous versions of your projects among many other useful features.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Jquery', imageUrl:'assets/images/jquery.png', color: '#1673a3', id: 6, url:'https://jquery.com/'}" direction="'left'">
+			jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. jQuery is the most popular JavaScript library in use today and is currently used in over 60% of websites.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'HTML5', imageUrl:'assets/images/htmlfive.png', color: '#0f4e6e', id: 7, url:'https://www.w3.org/TR/html5/'}">
+			HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current version of the HTML standard. It was published in October 2014 by the World Wide Web Consortium (W3C) to improve the language with support for the latest multimedia. Many new syntactic features are included. To natively include and handle multimedia and graphical content the new &lt;video&gt;, &lt;audio&gt; and &lt;canvas&gt; elements were added, and support for scalable vector graphics (SVG) content. To enrich the semantic content of documents, new page structure elements such as &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;aside&gt; and &lt;nav&gt; are added.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'CSS3', imageUrl:'assets/images/cssthree.png', color: '#3fbefe', id: 8, url:'https://www.w3.org/Style/CSS/current-work.en.html'}" direction="'left'">
+			Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language such as HTML.CSS3 is the latest standard of css earlier versions: (CSS2).The main difference between css2 and css3 is media queries, namespaces, level 3 selectors and color.
+		</jmc-skill-hero>
+		<jmc-skill-hero skill="{title:'Javascript(Es6)', imageUrl:'assets/images/javascript.png', color: '#0f4e6e', id: 9, url:'http://www.ecma-international.org/publications/standards/Ecma-262.htm'}">
+			JavaScript is a high-level, dynamic, untyped, and interpreted programming language. Alongside HTML and CSS, it is one of the three core technologies of Web development. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Though support in older browsers is limited it is possible to use it in production apps by using a transpiler such as Babel.js along with a Polyfill allowing you to write ES6 code and still have it work in older browsers.
+		</jmc-skill-hero>
+	</section>
+
+	<jmc-header title="'About This Website'"></jmc-header>
+	<div class="about-container">
+		<p>
+			This website was developed from the ground up in AngularJS. It follows current best practices and everything is developed with modularity in mind. I developed this portfolio website while learning angular and have learned alot since then which i would do differently if I had the time to re-do it though I believe it turned out nicely considering it was my first project.
+		</p>
+		<p>
+			As Brian Foote puts it, 
+			"Often, initial versions of a system are vehicles whereby programmers learn what pieces must be brought into play to solve a particular problem. Only after these are identified do the architectural boundaries among parts of the system start to emerge."
+		</p>
+		<p>
+			If your interested, click one of the buttons below to view a build log of this website or go to the Github page to view the source code.
+		</p>
+		<md-button href="#build" class="jmc-button-invert md-whiteframe-3dp">Build Log</md-button>
+		<md-button href="https://github.com/jessemc98/portfolio" class="jmc-button-invert md-whiteframe-3dp">Github Source</md-button>
+	</div>
+
+</div>

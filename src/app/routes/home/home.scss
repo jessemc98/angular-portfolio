@@ -1,0 +1,37 @@
+.home-view {
+	height: 100vh;
+	h1 {
+		font-size: 2em;
+		line-height: 1em;
+		margin-bottom: 0;
+		text-decoration: underline;
+		color: #197db0;
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.8);
+
+	}
+	h2 {
+		font-size:1.8em;
+		line-height: 1em;
+		margin-top: 0;
+		margin-bottom: 10px;
+		color: #77909d;
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.8);
+	}
+}
+
+@media only screen and (min-width: 450px) {
+	.home-view{font-size: 1.4rem;}
+}
+
+@media only screen and (min-width: 690px) {
+	.home-view{
+		font-size: 1.8rem;
+		h2 {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.home-view{font-size: 2.3rem;}
+}

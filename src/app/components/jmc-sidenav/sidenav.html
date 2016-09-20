@@ -1,0 +1,59 @@
+<div class="jmc-sidenav">
+  <div class="jmc-sidenav-content" md-whiteframe="6"
+    layout="column" ng-hide="nav.isHidden">
+
+  <!-- close/open button only for larger than mobile -->
+  <md-button class="md-icon-button jmc-sidenav-toggle" ng-click="nav.toggle()">
+    <md-icon class="material-icons">{{nav.isHidden ? 'menu' : 'close'}}</md-icon>
+  </md-button>
+
+	<!-- logo -->
+    <div 
+      class="jmc-sidenav-logo" 
+      flex="20" 
+      layout 
+      layout-align="center center">
+	    <img src="/assets/images/jmc-logo.gif" alt="logo.gif">
+   	</div>
+	
+	<!-- nav links -->
+    <ul 
+      class="jmc-sidenav-links" 
+      flex="40" 
+      layout="column" 
+      layout-align="space-around left">
+      <jmc-nav-links ng-repeat="link in nav.links" info="::link" ng-click="::nav.close()" delay="{{::$index * 50 + 150}}"></jmc-nav-links>
+    </ul>
+
+	<!-- follow me buttons -->
+   	<jmc-follow links="::nav.social" flex="20" layout-align="space-between center"></jmc-follow>
+
+  <!-- Footer -->
+   	<div class="jmc-sidenav-footer" flex="10" layout="column">
+   		<!-- view source on github -->
+   		<div class="github">
+   			<md-button class="md-fab md-mini" href="http://www.github.com">
+  				<md-icon class="material-icons">visibility</md-icon>
+   			</md-button>
+        <a href="http://www.github.com/" target="_blank">View Source</a>
+  		</div>
+  		
+  		<!-- email -->
+  		<div class="email">
+  			<md-button class="md-fab md-mini" href="#contact">
+  				<md-icon class="material-icons">mail</md-icon>
+  			</md-button>
+	   		<a href="mailto:jessemc98@hotmail.com?" target="_top">jessemc98@hotmail.com</a>
+  	  </div>
+
+     	<!-- copyright -->
+     	<p>&copy;Copyright Jesse McIntosh 2016.</p>
+    </div>
+  </div>
+  <div jmc-backdrop ng-show="!nav.isHidden && !nav.disableBackdrop" hide-md></div>
+  
+  <!--Open navbar button-->
+  <md-button class="jmc-sidenav-open md-fab" ng-click="nav.open()" hide-gt-sm ng-show="nav.isHidden">
+    <md-icon class="material-icons">menu</md-icon>
+  </md-button>
+</div>

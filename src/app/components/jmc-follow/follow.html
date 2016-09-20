@@ -1,0 +1,12 @@
+<div layout="row" layout-align="space-between center" class="jmc-follow">
+  <div ng-repeat="link in linksObj" flex>
+    <md-button
+      ng-href="{{link.path}}"
+      class="jmc-follow-button md-fab" 
+      aria-label="Github Link">
+      <md-icon ng-if="link.icon" class="material-icons">{{link.icon}}</md-icon>
+		<div class="jmc-follow-icon" ng-if="link.iconUrl" ng-include="link.iconUrl">{{link.iconUrl}}</div>
+
+    </md-button>
+  </div>
+</div>

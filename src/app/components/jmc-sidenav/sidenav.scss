@@ -1,0 +1,365 @@
+@keyframes breathe {
+	0%, 100% {transform: scale(1.1) translate(0, 6px)}
+	50% {transform: scale(0.9) translate(0, 6px)}
+}
+
+.jmc-sidenav {
+	&-content {
+		position: fixed;
+		overflow: hidden;
+		z-index: 1000;
+		background: #4294be;
+		min-height: 100vh;
+		height: 100%;
+		width: 80%;
+		max-width: 270px;
+		left: 0;
+		transition: transform 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+		transform: translate3d(0,0,0);
+
+		&.ng-hide {
+			// transition: translate 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
+			transform: translate3d(-100%,0,0);
+			.jmc-sidenav-logo {
+				img {
+					transition: opacity 200ms;
+					opacity: 0;
+				}
+			}
+			.jmc-sidenav-links {
+				a {
+					transition: opacity 50ms ease-in 0ms, transform 100ms cubic-bezier(1, 0.03, 1, 0.04) 2s;
+					opacity: 0;
+					transform: translate3d(60px,0,0);
+
+				}
+			}
+			.jmc-sidenav-open.md-fab.md-button {
+				transition: transform 200ms ease-out;
+				transform: translate(-100%, -100%);
+			}
+		}
+	}
+	//page specific style (remove at some point)//
+	//toggle button hidden by default//
+	&-toggle.md-icon-button {
+		display: none;
+		position: absolute;
+		right: 2px;
+		line-height: 50px;
+		width: 66px;
+		height: 66px;
+		md-icon {
+			font-size: 50px;
+			color: white;
+		}
+	}
+
+	&-logo {
+		img {
+			max-width: 80%;
+			max-height: 100px;
+			margin: 20px 0;
+			height: auto;
+			opacity: 1;
+			transition: opacity 200ms ease-in 200ms;
+		}
+	}
+
+	// page navigation links //
+	&-links {
+		position: relative;
+		margin: 15px 0;
+		padding-left: 70px;
+		li {
+			list-style-type: none;
+			outline: none;
+		}
+		.active {
+			a {
+				text-decoration: underline;
+			}
+			.jmc-sidenav-bullet {
+				background-color: transparent !important;
+				border: 3px solid black;
+				width: 20px;
+				height: 20px;
+				animation: breathe 2s ease-in-out 100ms infinite;
+				transform-origin: 50% 50%;
+				// box-shadow: inset 0 0 0 3px white, 0 0 0 1px white;
+			}
+		}
+
+		// bullet point //
+		.jmc-sidenav-bullet {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			position: absolute;
+			background: black;
+			left: 27px;
+			transform: translate(0, 7px);
+			outline: none;
+		}
+		//nav links//
+		a {
+			display: block;
+			text-decoration: none;
+			font-size: 1.8em;
+			font-weight: bolder;
+			color: white;
+			overflow: hidden;
+			max-height: 38px;
+			transition: opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms, transform 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 600ms;
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+			outline: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.jmc-follow {
+		a {
+			background-color: #519cd6;
+			&:not([disabled]):hover {
+				background: darken(#197db0, 10%);
+			}
+		}
+	}
+
+	&-footer {
+		justify-content: space-around;
+		align-content: center;
+		align-items: center;
+
+		.github {
+			margin-right: 1.4em;
+		}
+		.email {
+			display: none;
+		}
+
+		.md-button {
+			background-color: darken(#197db0, 10%);
+			&:not([disabled]):hover {
+				background-color: #519cd6;
+			}
+
+		}
+
+		a {
+			color: white;
+			line-height: 0;
+
+		}
+
+		// copyright //
+		p {
+			color: white;
+			font-size: 0.5em;
+			margin: 0 auto;
+		}
+	}
+
+	//end of page specific style//
+	
+	// open button for mobile devices //
+	.jmc-sidenav-open.md-fab.md-button {
+		position: fixed;
+		z-index: 999;
+		width: 50vw;
+		max-width: 200px;
+		height: 50vw;
+		max-height: 200px;
+		opacity: 0.95;
+		transform: translate(-50%, -50%);
+		background: #197db0;
+		box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+		
+		&:not([disabled]):hover {
+			background: darken(#197db0, 10%);
+		}
+		
+		md-icon {
+			position: relative;
+			margin-right: 15%;
+			margin-top: 35%;
+			font-size: 50px;
+			font-weight: bold;
+		}
+
+	}
+
+}
+
+// show footer aligned left if big enough //
+@media only screen and (min-height:540px){
+	.jmc-sidenav {
+		&-footer {
+			align-content: flex-start;
+			align-items: flex-start;
+			padding-left: 15px;
+			.email {
+				display: block;
+			}
+		}
+	}
+}
+// hide footer links if too small//
+@media only screen and (max-height:485px){
+	.jmc-sidenav {
+		&-footer {
+			.email {
+				display: none;
+			}
+			.github {
+				display: none;
+			}
+		}
+	}
+}
+@media only screen and (max-height:356px){
+	.jmc-sidenav {
+		&-footer {
+			display: none;
+		}
+		&-links {
+			margin-top: 50px;
+		}
+	}
+}
+@media only screen and (max-width: 335px){
+	.jmc-sidenav-footer {
+		a {
+			font-size: 0.8em;
+		}
+	}
+}
+//hide nav follow links if too small//
+@media only screen and (max-height:370px){
+	.jmc-sidenav {
+		.jmc-follow {
+			display: none;
+		}
+	}
+}
+
+// fix for vm units on iphone //
+@media only screen and (height:480px) and (width:320px) {
+	// open button for mobile devices //
+	.jmc-sidenav-open.md-fab.md-button {
+		height: 160px;
+		width: 160px;
+	}
+	.jmc-sidenav {
+		&-content {
+			height: 100%;
+		}
+	}
+}
+
+// tablet styles //
+@media only screen and (min-width: 600px) {
+	//hide open nav button//
+	.jmc-sidenav-open.md-fab.md-button {
+		display: none;
+	}
+	.jmc-sidenav {
+		&-content {
+			display: block;
+			transition: width 350ms ease-in-out;// old cubic-bezier(0.87,-0.21, 0.2, 1)
+			transform: translate3d(0,0,0);
+
+			&.ng-hide {
+				display: block !important; //overrides default ng-hide behaviour
+				width: 80px;
+				left: 0;
+				transform: translate3d(0,0,0);
+
+				.jmc-sidenav-logo {
+					img {
+					transition: 
+						opacity 200ms ease-out, 
+						transform 100ms ease-out 600ms;
+					opacity: 0;
+					transform: translate(40px, 30px);
+					}
+				}
+				.jmc-sidenav-links {
+					a {
+						transition: opacity 100ms ease-in 100ms, transform 100ms normal 2s;
+						opacity: 0;
+						transform: translate(40px);
+					}
+				}
+				.jmc-follow {
+					& > div {
+						transition: opacity 200ms ease-out 0ms;
+						opacity: 0;
+					}
+				}
+				.jmc-sidenav-footer {
+					opacity: 0;
+				}
+			}
+		}
+		&-toggle.md-icon-button {
+			display: block;
+		}
+		&-logo {
+			height: 20%;
+			img {
+				// width: 100%;
+				max-height: 100%;
+				transition: 
+					opacity 200ms ease-in 250ms,
+					transform 100ms ease-in 250ms;
+				opacity: 1;
+				transform: translate(0, 30px);
+			}
+		}
+		&-links {
+			height: 40%;
+			a {
+				transition: opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms, transform 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+				opacity: 1;
+				transform: translate(0);
+			}
+		}
+		.jmc-follow {
+			height: 20%;
+			& > div {
+				transition: opacity 200ms ease-in 50ms;
+				opacity: 1;
+			}
+		}
+		&-footer {
+			height: 20%;
+			transition: opacity 100ms ease-in 50ms;
+			opacity: 1;
+		}
+	}
+}
+
+
+// opaque black clicky thing to close menu //
+.jmc-backdrop {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 999;
+	background: black;
+	opacity: 0.5;
+	transition: all 500ms cubic-bezier(0.4, 0.0, 0.2, 1) 50ms;
+
+	&.ng-hide {
+		opacity: 0;
+	}
+}
+
+// disables scrolling on body //
+body.noscroll {
+	overflow: hidden;
+}
+

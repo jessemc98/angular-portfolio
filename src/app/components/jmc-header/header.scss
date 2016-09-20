@@ -1,0 +1,21 @@
+jmc-header {
+  position: relative;
+  vertical-align: center;
+
+  > div {
+    clear: both;
+  }
+  h2 {
+    border: 2px solid #197db0;
+    border-radius: 30px;
+    padding: 0 15px 5px 15px;
+    text-decoration: underline;
+    color: #197db0;
+  }
+  span {
+    // position: relative;
+    // bottom: 50%;
+    border: 1px solid #197db0;
+    height: 0px;
+  }
+}

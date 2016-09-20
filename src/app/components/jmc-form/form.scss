@@ -1,0 +1,17 @@
+.formwrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+jmc-form {
+
+	button {
+		float: right;
+		margin: 15px;
+	}
+	.error-msg {
+		position: absolute;
+		font-size: 0.8rem;
+	}
+
+}

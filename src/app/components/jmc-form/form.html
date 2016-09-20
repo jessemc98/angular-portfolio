@@ -1,0 +1,32 @@
+<form class="formwrap" name="contactForm" novalidate>
+	<div class="wrap">
+    	<jmc-input ng-class="{'has-error': contactForm.yourName.$invalid && contactForm.yourName.$touched}">
+    		<label>Name</label>
+    		<input name="yourName" ng-model="contact.yourName" ng-required="true" ng-minlength="3">
+    	</jmc-input>
+        <div class="error-msg" ng-messages="contactForm.yourName.$touched && contactForm.yourName.$error">
+            <div ng-message="required">This field is required!</div>
+            <div ng-message="minlength">Your name must be atleast 3 characters long!</div>
+        </div>
+
+	    <jmc-input ng-class="{'has-error': contactForm.email.$invalid && contactForm.email.$touched}">
+        	<label>Email</label>
+        	<input name="email" type="email" ng-model="contact.email" ng-required="true">
+        </jmc-input>
+        <div class="error-msg" ng-messages="contactForm.email.$touched && contactForm.email.$error">
+            <div ng-message="required">Please enter an email address</div>
+            <div ng-message="email">Please enter a valid email address</div>
+        </div>
+
+        <jmc-input ng-class="{'has-error': contactForm.msg.$invalid && contactForm.msg.$touched}">
+        	<label>Message</label>
+        	<input name="msg" ng-model="contact.msg" ng-required="true" ng-maxlength="255">
+        </jmc-input>
+        <div class="error-msg" ng-messages="contactForm.msg.$touched && contactForm.msg.$error">
+            <div ng-message="required">Please enter a message</div>
+            <div ng-message="maxlength">Error, Please keep your message no longer than 255 characters</div>
+        </div>
+	</div>
+    <button class="jmc-button">Send</button>
+    
+</form>

@@ -1,0 +1,241 @@
+jmc-skill-hero {
+	div {
+		text-align: center;
+	}
+
+}
+.jmc-skill{
+	position: relative;
+	width: 100%;
+	display: block;
+	height: 100px;
+	outline: none;
+	transition: z-index 220ms step-end;
+	z-index: 0;
+
+
+	
+	&-wrapper {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%) translate3d(0,0,0);
+		transition: height 220ms ease-out;
+	}
+
+	&.active {
+			transition: z-index 220ms step-start;
+			z-index: 20;
+			box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+		.jmc-skill-wrapper {
+			height: 375px;
+			transform: translate(0, -50%) translate3d(0,0,1);
+		}
+		.jmc-skill-main {
+			h2 {
+				top: 0px;
+			}
+			p {
+				transition: opacity 300ms ease-in, transform 100ms ease-in 25ms;
+				display: block;
+				opacity: 1;
+				height: 70%;
+				transform: translate(0%) scale(1);
+			}
+			a {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&.active-remove {
+			.jmc-skill-main {
+				p {
+					// opacity: 0;
+					// transform: translate(50%);
+				}
+			}
+		}
+	}
+
+	&-main {
+		width: 80%;
+		height: 100%;
+		position: absolute;
+		display: inline-block;
+		background: white;
+
+		h2 {
+			color: #444444;
+			position: absolute;
+			margin: auto;
+			top: 20px;
+			left: 50%;
+			transform: translate(-50%, 50%);
+		}
+		p {
+			box-sizing: border-box;
+			// display: none;
+			position: absolute;
+			padding: 0 2em;
+			bottom: 60px;
+			height: 25%;
+			margin: 0;
+			overflow-y: scroll;
+			transform: translate(30%) scale(0);
+			opacity: 0;
+			transition: opacity 50ms ease-in, transform 50ms ease-in 25ms;
+		}
+		&.left {
+			right: 0;
+		}
+		a {
+			position: absolute;
+			bottom: 5%;
+			right: 5%;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 100ms ease-in 25ms;
+			padding: 0 15px;
+		}
+	}
+
+	&-img {
+		position: absolute;
+		right: 0;
+		width: 20%;
+		height: 100%;
+		background: #0f4e6e;
+		text-align: center;
+		display: inline-block;
+		img {
+			position: relative;
+			top: 50%;
+			left: 0;
+			transform: translate(0, -50%);
+			width: 80%;
+			&::after {
+				content: " ";
+				width: 100px;
+				height: 100px;
+				background: white;
+			}
+		}
+		&.left {
+			left: 0;
+		}
+	}
+}
+
+
+// Tablet style //
+@media only screen and (min-width: 600px) {
+	.jmc-skill {
+		display: inline-block;
+		width: 49.6%;
+		height: 275px;
+		box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+		margin: auto;
+
+		&.direction {
+			.jmc-skill-wrapper {
+				left: initial;
+				right: 0;
+			}
+		}
+
+		&-wrapper {
+			transform: none;
+			top: 0;
+			// bottom: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+			transition: width 150ms ease-in-out 50ms, height 250ms ease-in-out;
+			
+		}
+
+		&.active {
+			.jmc-skill-wrapper {
+				height: 550px;
+				width: 200%;
+				box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+				transition: width 150ms ease-in-out, height 250ms ease-in-out 50ms, box-shadow 300ms;
+			}
+			.jmc-skill-main {
+				height: 330px;
+				transition: height 250ms ease-in-out 50ms;
+				h2 {
+					top: 20px;
+				}
+				p {
+					padding-top: 20px;
+				}
+			}
+		}
+
+		&-main {
+			width: 100%;
+			height: 20%;
+			bottom: 0;
+			padding-bottom: 1.2em;
+			box-shadow: none;
+			transition: height 250ms ease-in-out;
+			h2 {
+				top: 15px;
+				transition: top 320ms;
+			}
+			p {
+				transition: none;
+			}
+		}
+
+		&-img {
+			width: 100%;
+			height: 220px;
+			box-shadow: none;
+			img {
+				height: 70%;
+				width: auto;
+			}
+		}
+	}
+}
+
+// PC style //
+@media only screen and (min-width: 960px) {
+	.jmc-skill{
+		width: 33%;
+		// margin: 1px;
+		&-wrapper {
+			top: initial;
+			bottom: 0;
+		}
+		&.top {
+			.jmc-skill-wrapper {
+				top: 0;
+				bottom: initial;
+			}
+		}
+		&.onleft {
+			.jmc-skill-wrapper {
+				left: 0;
+				right: initial;
+			}
+		}
+		&.onright {
+			.jmc-skill-wrapper {
+				left: initial;
+				right: 0;
+			}
+		}
+		&.onmid {
+			.jmc-skill-wrapper{
+				left: 50%;
+				transform: translate(-50%);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,51 @@
+.jmc-input {
+  padding: 30px 0 0 0;
+  position: relative;
+
+  label {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    transform: translateY(25px);
+    color: #e2e2e2;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  input {
+    position: relative;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 16px;
+    border-bottom: 1.5px solid #e2e2e2;
+    &.ng-invalid.ng-touched {
+      color: #cc0000;
+      border-bottom: 2.5px solid #cc0000;
+    }
+  }
+
+  &.is-active {
+    input {
+      border-bottom: 2.5px solid #519cd6;
+    }
+    label {
+      color: #519cd6;
+    }
+  }
+  &.is-completed label {
+    font-size: 12px;
+    transform: translateY(0);
+  }
+
+  &.is-active.has-error {
+    label {
+      color: #cc0000;
+    }
+  }
+  
+}
+
+//props to legeoffery on codepen for the inspiration for these awesome inputs//
+//  http://codepen.io/legeoffrey/  //
